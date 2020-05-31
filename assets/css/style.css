@@ -2,12 +2,13 @@ body
 {
     background-color: rgb(243, 232, 232);
 }
-h5
+h5,#startQuizBtn
 {
     color: white;
     background-color: cadetblue;
+    border-color: cadetblue;
 }
-#cardBody,#startQuizBtn
+#cardBody
 {
     color: cadetblue;
     background-color: white;
