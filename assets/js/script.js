@@ -6,12 +6,12 @@ const quizQuestions = [
         "answer": "3. <script>"
     },
     {
-        "question": 'Q: What is the correct JavaScript syntax to change the content of the HTML element below? \n <p id="demo">This is a demonstration.</p>',
-        "options": ['1. document.getElementById("demo").innerHTML = "Hello World!";',
-            '2. #demo.innerHTML = "Hello World!";',
-            '3. document.getElementByName("p").innerHTML = "Hello World!";',
-            '4. document.getElement("p").innerHTML = "Hello World!";'],
-        "answer": '1. document.getElementById("demo").innerHTML = "Hello World!";'
+        "question": "Q: How do you declare a variable in JavaScript?",
+        "options": ["1. var a;",
+            "2. variable a;",
+            "3. say a;",
+            "4. assume a" ],
+        "answer": "1. var a;"
     },
     {
         "question": "Q: Where is the correct place to insert a JavaScript?",
@@ -20,6 +20,17 @@ const quizQuestions = [
             '3. The <head> section'],
         "answer": "1. Both the <head> section and the <body> section are correct"
 
+    },
+    {
+        "question" : "Q: how do you declare a function in JavaScript?",
+        "options" : ["1. method m1()", "2. function m1 {}", "3. function m1() {}", "4. public void m1() {}"],
+        "answer" : "3. function m1() {}"
+    },
+    {
+        "question" : "Q: What are the two arguments of addEventListener function?",
+        "options" : ["1. event and html element", "2. name of event and function to be executed on event ocurrence"
+                      ,"3. type of event and event", "4. event and event count"],
+        "answer" : "2. name of event and function to be executed on event ocurrence"
     }
 ];
 // intial timer of 75 seconds
