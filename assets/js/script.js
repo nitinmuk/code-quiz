@@ -205,7 +205,7 @@ function renderHighScores() {
 }
 function initHighScores() {
     const storedHighScores = localStorage.getItem("nameScore")
-    if (storedHighScores.length > 0) {
+    if (null != storedHighScores && storedHighScores.length > 0) {
         nameScore = JSON.parse(storedHighScores);
     }
 }
