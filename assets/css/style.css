@@ -2,7 +2,13 @@ body
 {
     background-color: rgb(243, 232, 232);
 }
-h5,#startQuizBtn
+h5
+{
+    color: white;
+    background-color: cadetblue;
+    border-color: cadetblue;
+}
+#startQuizBtn,#initialSubmit,#goBack,#clearHighScore
 {
     color: white;
     background-color: cadetblue;
@@ -13,4 +19,46 @@ h5,#startQuizBtn
     color: cadetblue;
     background-color: white;
     border-color: cadetblue; 
+}
+#initialText
+{
+    border-color: cadetblue;
+}
+ul 
+{
+    list-style-type: none;
+    padding: 0;
+    background-color: white;
+}
+
+li 
+{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 1px;
+    background-color: cadetblue;
+    color: white;
+    font-size: 1em;
+    line-height: 1.5;
+    cursor: pointer;
+}
+.hide 
+{
+    display: none;
+}
+.right
+{
+    background-color: green;
+}
+.wrong
+{
+    background-color: red;
+}
+.result
+{
+    float: right;
+}
+#viewHighScore
+{
+    cursor: pointer;
 }

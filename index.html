@@ -22,10 +22,8 @@
     <header>
         <div class="container">
             <div class="row">
-                <div class="col-md-2">
-                    <a href="#highScores">
-                        <h5>View HighScores</h5>
-                    </a>
+                <div class="col-md-2">                    
+                    <h5 id="viewHighScore">View HighScores</h5>                    
                 </div>
                 <div class="col-md-8">
                 </div>
@@ -38,9 +36,9 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-2">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <div class="card">
                         <div class="card-body" id="cardBody">
                             <h5 class="card-title" id="cardTitle">
@@ -48,19 +46,25 @@
                             </h5>
                             <ul class="card-text" id="cardText">
                                 Try to answer the following code-related questions within the time
-                                limit. Keep in mind the incorrect answers will penalize your scoretime by ten seconds!
+                                limit. Please keep in mind that the incorrect answers will penalize your scoretime by ten seconds!
                             </ul>
-                            <a href="#" class="btn btn-primary" id="startQuizBtn">
+                            <a href="#" class="btn btn-info" id="startQuizBtn">
                                 Start Quiz
                             </a>
+                            <!-- added for display result-->
+                            <label for="initials" class="hide" id="initialLabel">Enter your initials: </label>
+                            <input type="text"  class="hide"  id="initialText" name="initial">
+                            <button type="button" class="btn btn-info hide" id="initialSubmit">Submit</button>
+                            <!-- buttons for highscore screen-->
+                            <button type="button" class="btn btn-info hide" id="goBack">Go Back</button>
+                            <button type="button" class="btn btn-info hide" id="clearHighScore">Clear HighScore</button>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                     </div>
                 </div>
             </div>
     </section>
     <script src="./assets/js/script.js"></script>
 </body>
-
 </html>
