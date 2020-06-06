@@ -22,8 +22,8 @@
     <header>
         <div class="container">
             <div class="row">
-                <div class="col-md-2">                    
-                    <h5 id="viewHighScore">View HighScores</h5>                    
+                <div class="col-md-2">
+                    <h5 id="viewHighScore">View HighScores</h5>
                 </div>
                 <div class="col-md-8">
                 </div>
@@ -44,27 +44,29 @@
                             <h5 class="card-title" id="cardTitle">
                                 Coding Quiz Challenge
                             </h5>
-                            <ul class="card-text" id="cardText">
+                            <p class="card-text" id="cardText">
                                 Try to answer the following code-related questions within the time
-                                limit. Please keep in mind that the incorrect answers will penalize your scoretime by ten seconds!
-                            </ul>
-                            <a href="#" class="btn btn-info" id="startQuizBtn">
-                                Start Quiz
-                            </a>
+                                limit. Please keep in mind that the incorrect answers will penalize your scoretime by
+                                ten seconds!
+                            </p>
+                            <ul id="optionsList"></ul>                            
+                            <button type="button" class="btn btn-info" id="startQuizBtn">Start Quiz</button>
                             <!-- added for display result-->
-                            <label for="initials" class="hide" id="initialLabel">Enter your initials: </label>
-                            <input type="text"  class="hide"  id="initialText" name="initial">
+                            <label class="hide" id="initialLabel">Enter your initials: </label>
+                            <input type="text" class="hide" id="initialText" name="initial">
                             <button type="button" class="btn btn-info hide" id="initialSubmit">Submit</button>
                             <!-- buttons for highscore screen-->
                             <button type="button" class="btn btn-info hide" id="goBack">Go Back</button>
                             <button type="button" class="btn btn-info hide" id="clearHighScore">Clear HighScore</button>
                         </div>
-                    </div>
-                    <div class="col-md-2">
-                    </div>
+                    </div>                    
+                </div>
+                <div class="col-md-2">
                 </div>
             </div>
+        </div>
     </section>
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>

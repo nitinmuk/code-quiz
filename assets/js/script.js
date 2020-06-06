@@ -10,7 +10,7 @@ const quizQuestions = [
         "options": ["1. var a;",
             "2. variable a;",
             "3. say a;",
-            "4. assume a" ],
+            "4. assume a"],
         "answer": "1. var a;"
     },
     {
@@ -22,15 +22,15 @@ const quizQuestions = [
 
     },
     {
-        "question" : "Q: how do you declare a function in JavaScript?",
-        "options" : ["1. method m1()", "2. function m1 {}", "3. function m1() {}", "4. public void m1() {}"],
-        "answer" : "3. function m1() {}"
+        "question": "Q: how do you declare a function in JavaScript?",
+        "options": ["1. method m1()", "2. function m1 {}", "3. function m1() {}", "4. public void m1() {}"],
+        "answer": "3. function m1() {}"
     },
     {
-        "question" : "Q: What are the two arguments of addEventListener function?",
-        "options" : ["1. event and html element", "2. name of event and function to be executed on event ocurrence"
-                      ,"3. type of event and event", "4. event and event count"],
-        "answer" : "2. name of event and function to be executed on event ocurrence"
+        "question": "Q: What are the two arguments of addEventListener function?",
+        "options": ["1. event and html element", "2. name of event and function to be executed on event ocurrence"
+            , "3. type of event and event", "4. event and event count"],
+        "answer": "2. name of event and function to be executed on event ocurrence"
     }
 ];
 // intial timer of 75 seconds
@@ -53,6 +53,7 @@ const initialSubmit = document.querySelector("#initialSubmit");
 const goBack = document.querySelector("#goBack");
 const clearHighScore = document.querySelector("#clearHighScore");
 const viewScores = document.querySelector("#viewHighScore");
+const optionsList = document.querySelector("#optionsList");
 
 initHighScores();
 
@@ -87,11 +88,12 @@ function displayQuestion() {
     if (questionIndex < quizQuestions.length) {
         cardTitle.textContent = quizQuestions[questionIndex].question;
         cardText.textContent = "";
+        optionsList.textContent = "";
         var optionsArray = quizQuestions[questionIndex].options;
         for (var j = 0; j < optionsArray.length; j++) {
             var listItem = document.createElement("li");
             listItem.textContent = optionsArray[j];
-            cardText.appendChild(listItem);
+            optionsList.appendChild(listItem);
         }
     }
 
@@ -150,6 +152,7 @@ function updateScoreAndRenderResult(event) {
 
 function displayScore() {
     cardTitle.textContent = "All Done!!";
+    optionsList.textContent = "";
     cardText.textContent = "Your final score is: " + score;
     displaySummaryControls();
     hideHighScoreControls();
@@ -173,12 +176,11 @@ function displayScores(event) {
     quizInProgress = false;
     event.preventDefault();
     storeHighScores();
-    displayHighScores();    
+    displayHighScores();
 }
 
 function displayHighScores() {
-    if(quizInProgress)
-    {
+    if (quizInProgress) {
         alert("Please finish current ongoing quiz before viewing high scores!!");
         return;
     }
@@ -200,7 +202,7 @@ function hideHighScoreControls() {
 
 function storeHighScores() {
     const initial = initialText.value;
-    initialText.value="";
+    initialText.value = "";
     const initialScore = {};
     initialScore['initial'] = initial;
     initialScore['score'] = score;
@@ -210,13 +212,14 @@ function storeHighScores() {
 
 function renderHighScores() {
     cardTitle.textContent = "Highscores";
+    optionsList.textContent = "";
     if (nameScore.length > 0) {
         nameScore.sort(function (a, b) { return b.score - a.score });
         cardText.textContent = "";
         nameScore.forEach(function (item) {
             const listItem = document.createElement("li");
             listItem.textContent = item.initial + " - " + item.score;
-            cardText.appendChild(listItem);
+            optionsList.appendChild(listItem);
         });
     }
     else {
@@ -238,6 +241,7 @@ function clearStorage() {
 function restoreOriginal() {
     cardTitle.textContent = "Coding Quiz Challenge";
     cardText.textContent = "Try to answer the following code-related questions within the time limit. Please keep in mind that the incorrect answers will penalize your scoretime by ten seconds!";
+    optionsList.textContent = "";
     showQuizButton();
     hideSummaryControls();
     hideHighScoreControls();
@@ -248,7 +252,7 @@ function restoreOriginal() {
 
 
 startQuizBtn.addEventListener("click", startQuiz);
-cardText.addEventListener("click", continueQuiz);
+optionsList.addEventListener("click", continueQuiz);
 initialSubmit.addEventListener("click", displayScores);
 goBack.addEventListener("click", restoreOriginal);
 clearHighScore.addEventListener("click", clearStorage);
