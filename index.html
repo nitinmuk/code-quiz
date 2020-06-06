@@ -20,6 +20,7 @@
 
 <body>
     <header>
+        <!-- Header starts and contains viewHighScore Link and Timer-->
         <div class="container">
             <div class="row">
                 <div class="col-md-2">
@@ -33,7 +34,9 @@
             </div>
         </div>
     </header>
+    <!-- header ends-->
     <section>
+        <!-- this is the main section which contains a central bootstrap card which is being dynamically updated based on user actions-->
         <div class="container">
             <div class="row">
                 <div class="col-md-2">
@@ -49,7 +52,7 @@
                                 limit. Please keep in mind that the incorrect answers will penalize your scoretime by
                                 ten seconds!
                             </p>
-                            <ul id="optionsList"></ul>                            
+                            <ul id="optionsList"></ul>
                             <button type="button" class="btn btn-info" id="startQuizBtn">Start Quiz</button>
                             <!-- added for display result-->
                             <label class="hide" id="initialLabel">Enter your initials: </label>
@@ -59,13 +62,14 @@
                             <button type="button" class="btn btn-info hide" id="goBack">Go Back</button>
                             <button type="button" class="btn btn-info hide" id="clearHighScore">Clear HighScore</button>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
                 <div class="col-md-2">
                 </div>
             </div>
         </div>
     </section>
+    <!-- main section ends-->
     <script src="./assets/js/script.js"></script>
 </body>
 
