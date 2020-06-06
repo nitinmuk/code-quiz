@@ -244,7 +244,6 @@ function restoreOriginal() {
     questionIndex = 0;
     score = 0;
     allQuestionAnswered = false;
-    enableHighScoreLink();
 }
 
 
