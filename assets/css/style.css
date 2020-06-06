@@ -43,7 +43,7 @@ li
     line-height: 1.5;
     cursor: pointer;
 }
-li:hover,button:hover
+li:hover,button:hover,#viewHighScore:hover
 {
     opacity : 0.75;
 }
