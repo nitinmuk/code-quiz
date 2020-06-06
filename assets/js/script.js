@@ -41,6 +41,7 @@ var questionIndex = 0;
 var score = 0;
 var allQuestionAnswered = false;
 var nameScore = [];
+var quizInProgress = false;
 const startQuizBtn = document.querySelector("#startQuizBtn");
 const remainTime = document.querySelector("#remainTime");
 const cardBody = document.querySelector("#cardBody");
@@ -56,6 +57,7 @@ const viewScores = document.querySelector("#viewHighScore");
 initHighScores();
 
 function startQuiz() {
+    quizInProgress = true;
     startTimer();
     hideQuizButton();
     displayQuestion();
@@ -133,7 +135,7 @@ function updateScoreAndRenderResult(event) {
     result.classList.add("result");
     element.appendChild(result);
     if (userAns == correctAns) {
-        score += 1;
+        score += 5;
         element.classList.add("right");
         result.textContent = "Correct!";
     }
@@ -150,6 +152,7 @@ function displayScore() {
     cardTitle.textContent = "All Done!!";
     cardText.textContent = "Your final score is: " + score;
     displaySummaryControls();
+    hideHighScoreControls();
 }
 
 function continueQuiz(event) {
@@ -167,12 +170,18 @@ function continueQuiz(event) {
 }
 
 function displayScores(event) {
+    quizInProgress = false;
     event.preventDefault();
     storeHighScores();
-    displayHighScores();
+    displayHighScores();    
 }
 
 function displayHighScores() {
+    if(quizInProgress)
+    {
+        alert("Please finish current ongoing quiz before viewing high scores!!");
+        return;
+    }
     hideSummaryControls();
     hideQuizButton();
     renderHighScores();
@@ -235,7 +244,9 @@ function restoreOriginal() {
     questionIndex = 0;
     score = 0;
     allQuestionAnswered = false;
+    enableHighScoreLink();
 }
+
 
 startQuizBtn.addEventListener("click", startQuiz);
 cardText.addEventListener("click", continueQuiz);
