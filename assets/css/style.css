@@ -8,23 +8,6 @@ h5
     background-color: cadetblue;
     border-color: cadetblue;
 }
-#startQuizBtn,#initialSubmit,#goBack,#clearHighScore
-{
-    color: white;
-    background-color: cadetblue;
-    border-color: cadetblue;
-    cursor: pointer;
-}
-#cardBody
-{
-    color: cadetblue;
-    background-color: white;
-    border-color: cadetblue; 
-}
-#initialText
-{
-    border-color: cadetblue;
-}
 ul 
 {
     list-style-type: none;
@@ -43,9 +26,37 @@ li
     line-height: 1.5;
     cursor: pointer;
 }
+/*
+* reducing opacity for all clickable entity when user hover mouse on it to have better user experience.
+*/
 li:hover,button:hover,#viewHighScore:hover
 {
     opacity : 0.75;
+}
+
+/*
+* all buttons to have consistent styling
+*/
+#startQuizBtn,#initialSubmit,#goBack,#clearHighScore
+{
+    color: white;
+    background-color: cadetblue;
+    border-color: cadetblue;
+    cursor: pointer;
+}
+#cardBody
+{
+    color: cadetblue;
+    background-color: white;
+    border-color: cadetblue; 
+}
+#initialText
+{
+    border-color: cadetblue;
+}
+#viewHighScore
+{
+    cursor: pointer;
 }
 .hide 
 {
@@ -59,11 +70,11 @@ li:hover,button:hover,#viewHighScore:hover
 {
     background-color: red;
 }
+
+/*
+* question result correct/wrong need to be displayed at right end of selected option hence floating it right.
+*/
 .result
 {
     float: right;
-}
-#viewHighScore
-{
-    cursor: pointer;
 }
